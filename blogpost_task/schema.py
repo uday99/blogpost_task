@@ -73,54 +73,7 @@ schema=graphene.Schema(query=Query,mutation=Mutation)
 
 
 
-# class UserType(UserQuery,DjangoObjectType):
-#     class Meta:
-#         model=User
-#         field=("id","username","email","password")
 
-
-# class UserQuery(graphene.ObjectType):
-#     def resolve_list_user(root,info):
-#         return User.objects.all()
-    
-#     def resolve_read_user(root,info,id):
-#         return User.objects.get(id=id)
-
-
-
-
-# class AuthMutation(graphene.ObjectType):
-#    register = mutations.Register.Field() #predefined settings to register user
-#    verify_account = mutations.VerifyAccount.Field() #used to verify account
-#    token_auth = mutations.ObtainJSONWebToken.Field() # get jwt to log in
-
-# # class Mutation(AuthMutation, graphene.ObjectType):
-# #    pass
-
-
-# class PostType(DjangoObjectType):
-#    class Meta:
-#       model=Post
-#       field='__all__'
-
-
-# class PostMutation(graphene.Mutation):
-#     class Arguments:
-#         author_id=graphene.Int()
-#         title=graphene.String()
-#         content=graphene.String()
-    
-#     @classmethod
-#     def mutate(cls,root,info,author_id,title,content):
-#         post=Post(author_id=author_id,title=title,content=content)
-#         post.save()
-
-
-# class Mutation(graphene.ObjectType):
-#     create_user=AuthMutation.Field()
-#     create_post=PostMutation.Field()
-
-# schema=graphene.Schema(query=UserQuery,mutation=Mutation)
 
 
     
